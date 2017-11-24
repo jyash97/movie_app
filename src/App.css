@@ -1,0 +1,175 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eeeeee;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.heading {
+  font-size: 22px;
+  color: #081c24;
+  padding: 3px;
+  width: 16%;
+  border-bottom: 2px solid #01d277;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.nav {
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: #081c24;
+}
+
+.nav img {
+  width: 6.5%;
+}
+
+.movies {
+  margin: 10px auto 10px auto;
+  overflow: hidden;
+}
+
+.movie {
+  width: 16.1%;
+  background-color: white;
+  display: inline-block;
+  margin: 10px 25px;
+  overflow: hidden;
+  transition: ease all 0.25s;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 25px rgba(8, 28, 36, 0.2);
+}
+
+.bottom {
+  margin-top: -5px;
+  transition: 0.15s all ease-in;
+  color: #081c24;
+}
+
+.movie:hover > .bottom {
+  color: white;
+  background-color: #081c24;
+}
+
+.bar {
+  background-color: #01d277;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.title {
+  font-size: 11px;
+  padding: 3px 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.progress {
+  overflow: hidden;
+  width: 100%;
+  margin: 3px auto 0px auto;
+}
+
+.date {
+  font-size: 10px;
+  padding: 0 5px;
+  font-weight: 100;
+}
+
+.in {
+  float: right;
+  display: inline;
+  width: 20%;
+}
+
+input {
+  padding: 5px;
+  margin: 4px;
+  border: 0px;
+  border-bottom: 2px solid #01d277;
+  color: #081c24;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  width: 35%;
+  transition: 0.2s ease all;
+  margin-left: 86px;
+}
+
+::placeholder {
+  font-family: "Raleway", sans-serif;
+  color: rgba(8, 28, 36, 0.4);
+}
+
+input:focus {
+  width: 70%;
+  outline: 0px;
+  border: 0px;
+  margin-left: 0px;
+  border-bottom: 2px solid #01d277;
+}
+
+button {
+  background-color: #01d277;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  padding: 5px;
+  border: 0px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.title-m {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.date-m {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.overview-m {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: white;
+  margin: 6px auto;
+  font-size: 16px;
+}
+
+.dropdown {
+  position: absolute;
+  left: 80%;
+  top: 14%;
+  width: 14%;
+  background-color: white;
+}
+
+li {
+  list-style: none;
+  padding: 5px;
+}
