@@ -1,18 +1,18 @@
-import React from "react";
-import Navbar from "./Navbar";
-import axios from "axios";
-import MovieCard from "./MovieCard";
-import Dropdown from "./Dropdown";
+import React from 'react';
+import Navbar from './Navbar';
+import axios from 'axios';
+import MovieCard from './MovieCard';
+import Dropdown from './Dropdown';
 
 class Movie extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchterm: "",
-      search: "Shawshank Redemption",
+      searchterm: '',
+      search: 'Shawshank Redemption',
       a: [],
       dropdown: false,
-      b: []
+      b: [],
     };
     this.setSearch = this.setSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +30,7 @@ class Movie extends React.Component {
 
   handleDrop(movie) {
     this.setState({
-      searchterm: movie
+      searchterm: movie,
     });
   }
 
@@ -39,7 +39,7 @@ class Movie extends React.Component {
     this.setState(
       {
         searchterm: e.target.value,
-        dropdown: true
+        dropdown: true,
       },
       () => {
         return this.state.searchterm;
@@ -61,19 +61,26 @@ class Movie extends React.Component {
       .catch(error => this.setState({ dropdown: false }));
   }
 
-  setSearch(e, movie) {
-    e.preventDefault();
-    this.setState({
-      search: movie
-    });
-    axios
-      .get(
-        `http://api.themoviedb.org/3/search/movie?api_key=cc4b67c52acb514bdf4931f7cedfd12b&query=${
-          this.state.search
-        }`
-      )
-      .then(response => this.setState({ a: response.data.results[0] }))
-      .catch(error => this.setState({ fail: true }));
+  setSearch(movie) {
+    //removed event
+    //Since set state makes a pending transaction we need to
+    //add a callback for immmediate change or the transaction
+    //Hence shfited API call within callback
+    this.setState(
+      {
+        search: movie,
+      },
+      () => {
+        axios
+          .get(
+            `http://api.themoviedb.org/3/search/movie?api_key=cc4b67c52acb514bdf4931f7cedfd12b&query=${
+              this.state.search
+            }`
+          )
+          .then(response => this.setState({ a: response.data.results[0] }))
+          .catch(error => this.setState({ fail: true }));
+      }
+    );
   }
 
   render() {

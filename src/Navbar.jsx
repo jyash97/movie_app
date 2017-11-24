@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Logo from "./logo.svg";
+import Logo from './logo.svg';
 
 class Navbar extends React.Component {
   constructor() {
@@ -12,16 +12,17 @@ class Navbar extends React.Component {
   handleClick(e) {
     e.preventDefault();
     const val = this.refs.name.value;
-    this.props.setSearch(e, val);
+    //using changed setSearch function
+    this.props.setSearch(val);
   }
 
   render() {
     let display;
     const link = {
-      color: "white",
-      textDecoration: "none",
-      float: "right",
-      padding: "5px"
+      color: 'white',
+      textDecoration: 'none',
+      float: 'right',
+      padding: '5px',
     };
     if (!this.props.showsearch)
       display = (
@@ -39,7 +40,7 @@ class Navbar extends React.Component {
             placeholder="Search"
             onChange={e => this.props.handleChange(e)}
           />
-          <button onClick={e => this.handleClick(e)}>Search</button>
+          <button onClick={this.handleClick}>Search</button>
         </div>
       );
     }
