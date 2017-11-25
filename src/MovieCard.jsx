@@ -17,7 +17,7 @@ class MovieCard extends React.Component {
 
     const Container = styled.div`
       width: 52%;
-      margin: 170px auto;
+      margin: 20vw auto;
       padding: 15px;
       border-left: 7px solid #01d277;
       overflow: hidden;
